@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+
+    background-color: #f0f2f5; 
+
+
+    background-image: linear-gradient(rgba(240, 242, 245, 0.85), rgba(240, 242, 245, 0.85)), url('img/fundo-matematica.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #4a47a3;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #706fd3;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4a47a3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.opcoes label {
+    display: block;
+    background-color: #f0f2f5;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.opcoes label:hover {
+    background-color: #e2e4e8;
+}
+
+.opcoes input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.pontuacao {
+    font-size: 20px;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.numero-pergunta {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.inicio-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.inicio-form label {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.inicio-form input[type="text"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.inicio-form input[type="text"]:focus {
+    outline: none;
+    border-color: #706fd3;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f5;
+    font-size: 18px;
+}
+
+.nome-equipe {
+    font-weight: 600;
+    color: #4a47a3;
+}
+
+.pontuacao-atual {
+    font-weight: 600;
+    color: #27ae60;
+}
+
+
+.ranking-table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+.ranking-table th, .ranking-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.ranking-table th {
+    background-color: #706fd3;
+    color: white;
+    font-size: 18px;
+}
+
+.ranking-table td {
+    font-size: 16px;
+}
+
+.ranking-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.link-ranking, .link-voltar {
+    display: inline-block;
+    margin-top: 25px;
+    font-weight: 600;
+    color: #4a47a3;
+    text-decoration: none;
+}
+
+.link-ranking:hover, .link-voltar:hover {
+    text-decoration: underline;
+}
