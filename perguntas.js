@@ -44,16 +44,15 @@ const todasAsPerguntas = [
         'opcoes': ['10', '5', '15', '12'],
         'correta': '10'
     },
-    // Corrigindo as duas perguntas com respostas erradas:
     {
         'pergunta': 'Quanto é 30% de 90?',
-        'opcoes': ['27', '33', '30', '45'], // Opção corrigida
-        'correta': '27' // Resposta correta
+        'opcoes': ['27', '33', '30', '45'],
+        'correta': '27' 
     },
     {
         'pergunta': 'Se você tem 10 balas e 50% são de morango, quantas balas de morango você tem?',
-        'opcoes': ['5', '7', '15', '3'], // Opção corrigida
-        'correta': '5' // Resposta correta
+        'opcoes': ['5', '7', '15', '3'], 
+        'correta': '5' 
     },
     {
         'pergunta': 'Maria tem 10 maçãs e 10% delas estão maduras. Quantas maçãs maduras ela tem?',
@@ -147,7 +146,7 @@ const todasAsPerguntas = [
     },
     {
         'pergunta': 'Se uma caixa de bombons tem 8 bombons e você comeu 1 bombom, que porcentagem da caixa você comeu?',
-        'opcoes': ['10,5%', '12,5%', '15,5%', '18,5%'], // Opção corrigida
+        'opcoes': ['10,5%', '12,5%', '15,5%', '18,5%'],
         'correta': '12,5%'
     }
 ];

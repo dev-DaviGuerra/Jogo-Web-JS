@@ -4,21 +4,22 @@ const NUMERO_PERGUNTAS = 5;
 const telaInicio = document.getElementById('tela-inicio');
 const telaQuiz = document.getElementById('tela-quiz');
 const inicioForm = document.getElementById('inicio-form');
-const equipeInput = document.getElementById('equipe');
+const jogadorInput = document.getElementById('jogador');
+const dataInput = document.getElementById('data-jogo'); // Novo campo de data
 const startButton = document.getElementById('startButton');
 
 const fimDeJogoBox = document.getElementById('fim-de-jogo-box');
 const fimDeJogoTitulo = document.getElementById('fim-de-jogo-titulo');
 const pontuacaoFinalTexto = document.getElementById('pontuacao-final-texto');
 
-const nomeEquipeSpan = document.getElementById('nome-equipe');
+const nomeJogadorSpan = document.getElementById('nome-jogador');
 const pontuacaoAtualSpan = document.getElementById('pontuacao-atual');
 const numeroPerguntaSpan = document.getElementById('numero-pergunta');
 const textoPerguntaH2 = document.getElementById('texto-pergunta');
 const opcoesContainer = document.getElementById('opcoes-container');
 const quizForm = document.getElementById('quiz-form');
 
-// Função para embaralhar um array (algoritmo de Fisher-Yates)
+// Função para embaralhar um array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -26,26 +27,26 @@ function shuffleArray(array) {
     }
 }
 
-function salvarPontuacaoLocal(equipe, pontuacao) {
+function salvarPontuacaoLocal(identificador, pontuacao) {
     let ranking = JSON.parse(localStorage.getItem('quizRanking')) || {};
-
-    if (!ranking[equipe] || pontuacao > ranking[equipe]) {
-        ranking[equipe] = pontuacao;
-    }
-
+    // Salva a pontuação para o identificador único (ex: "Davi - 22/07/2025")
+    ranking[identificador] = pontuacao;
     localStorage.setItem('quizRanking', JSON.stringify(ranking));
 }
 
 function iniciarQuiz() {
-    const nomeEquipe = equipeInput.value.trim();
-    if (nomeEquipe === '') return;
+    const nomeJogador = jogadorInput.value.trim();
+    const dataJogo = dataInput.value.trim();
+    if (nomeJogador === '' || dataJogo === '') return;
+
+    // Combina nome e data para criar um identificador único para a jogada
+    const identificadorJogador = `${nomeJogador} - ${dataJogo}`;
 
     shuffleArray(todasAsPerguntas);
     const perguntasSelecionadas = todasAsPerguntas.slice(0, NUMERO_PERGUNTAS);
 
-    // Salva o estado do jogo na sessão do navegador
     sessionStorage.setItem('quizState', JSON.stringify({
-        equipe: nomeEquipe,
+        jogador: identificadorJogador,
         perguntas: perguntasSelecionadas,
         pontuacao: 0,
         perguntaAtual: 0
@@ -67,7 +68,7 @@ function mostrarPergunta() {
 
     const pergunta = state.perguntas[state.perguntaAtual];
 
-    nomeEquipeSpan.textContent = `Equipe: ${state.equipe}`;
+    nomeJogadorSpan.textContent = `Jogador: ${state.jogador}`;
     pontuacaoAtualSpan.textContent = `Pontuação: ${state.pontuacao}`;
     numeroPerguntaSpan.textContent = `Pergunta ${state.perguntaAtual + 1} de ${NUMERO_PERGUNTAS}`;
     textoPerguntaH2.textContent = pergunta.pergunta;
@@ -84,7 +85,7 @@ function mostrarPergunta() {
 }
 
 function processarResposta(event) {
-    event.preventDefault(); // Impede o recarregamento da página
+    event.preventDefault();
 
     let state = JSON.parse(sessionStorage.getItem('quizState'));
     if (!state) return;
@@ -105,27 +106,39 @@ function mostrarFimDeJogo() {
     let state = JSON.parse(sessionStorage.getItem('quizState'));
     if (!state) return;
 
-    salvarPontuacaoLocal(state.equipe, state.pontuacao);
+    salvarPontuacaoLocal(state.jogador, state.pontuacao);
 
-    fimDeJogoTitulo.textContent = `Fim de Jogo, equipe "${state.equipe}"!`;
+    fimDeJogoTitulo.textContent = `Fim de Jogo, ${jogadorInput.value.trim()}!`;
     pontuacaoFinalTexto.textContent = `Sua pontuação final foi: ${state.pontuacao} de ${NUMERO_PERGUNTAS}`;
     
     fimDeJogoBox.classList.remove('hidden');
     telaQuiz.classList.add('hidden');
     telaInicio.classList.remove('hidden');
     
-    equipeInput.value = ''; // Limpa o input para o próximo jogo
-    sessionStorage.removeItem('quizState'); // Limpa a sessão do jogo
+    jogadorInput.value = '';
+    sessionStorage.removeItem('quizState');
+    validarInput(); // Desabilita o botão de começar novamente
 }
 
 // Lógica de validação do botão de início
 function validarInput() {
-    startButton.disabled = equipeInput.value.trim() === '';
+    if (!startButton) return;
+    startButton.disabled = jogadorInput.value.trim() === '';
 }
-document.addEventListener('DOMContentLoaded', validarInput);
-equipeInput.addEventListener('keyup', validarInput);
 
-// Event Listeners para o fluxo do jogo
+// Preenche a data de hoje e adiciona os event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Formata a data para dd/mm/aaaa
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Meses são de 0-11
+    const ano = hoje.getFullYear();
+    dataInput.value = `${dia}/${mes}/${ano}`;
+    
+    validarInput();
+});
+
+jogadorInput.addEventListener('keyup', validarInput);
 inicioForm.addEventListener('submit', (event) => {
     event.preventDefault();
     iniciarQuiz();

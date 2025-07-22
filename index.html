@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Matemática da Lidiane</title>
+    <title>Quiz de Matemática</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -11,7 +11,6 @@
         
         <div id="tela-inicio">
             <h1>Quiz de Matemática</h1>
-            <h5>Yasmim Mattos, Ana Carollina Sena, Damiana Brandorfo, Manuela Gonçalves</h5>
             
             <div id="fim-de-jogo-box" class="hidden">
                 <h2 id="fim-de-jogo-titulo">Fim de Jogo!</h2>
@@ -19,16 +18,20 @@
             </div>
 
             <form id="inicio-form" class="inicio-form">
-                <label for="equipe">Digite o nome da Equipe:</label>
-                <input type="text" name="equipe" id="equipe" required autocomplete="off">
+                <label for="jogador">Seu Nome:</label>
+                <input type="text" name="jogador" id="jogador" required autocomplete="off" placeholder="Digite seu nome aqui">
+                
+                <label for="data-jogo">Data:</label>
+                <input type="text" name="data-jogo" id="data-jogo" readonly>
+
                 <button type="submit" id="startButton">Começar a Jogar!</button>
             </form>
-            <a href="ranking.html" class="link-ranking">Ver Ranking de Equipes</a>
+            <a href="ranking.html" class="link-ranking">Ver Ranking Pessoal</a>
         </div>
 
         <div id="tela-quiz" class="hidden">
             <div class="quiz-header">
-                <span id="nome-equipe" class="nome-equipe">Equipe:</span>
+                <span id="nome-jogador" class="nome-jogador">Jogador:</span>
                 <span id="pontuacao-atual" class="pontuacao-atual">Pontuação: 0</span>
             </div>
             
