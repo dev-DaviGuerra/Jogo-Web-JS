@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ranking = JSON.parse(localStorage.getItem('quizRanking')) || {};
 
     if (Object.keys(ranking).length === 0) {
-        rankingContainer.innerHTML = '<p>Nenhuma pontuação foi registrada ainda. Seja o primeiro a jogar!</p>';
+        rankingContainer.innerHTML = '<p>Nenhuma pontuação foi registrada ainda!</p>';
     } else {
         const rankingArray = Object.entries(ranking).sort(([, a], [, b]) => b - a);
 
