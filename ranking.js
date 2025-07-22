@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-
     const rankingContainer = document.getElementById('ranking-container');
     const ranking = JSON.parse(localStorage.getItem('quizRanking')) || {};
 
     if (Object.keys(ranking).length === 0) {
-        rankingContainer.innerHTML = '<p>Nenhuma pontuação foi registrada ainda!</p>';
+        rankingContainer.innerHTML = '<p>Ainda não há nenhuma pontuação registrada.</p>';
     } else {
         const rankingArray = Object.entries(ranking).sort(([, a], [, b]) => b - a);
 
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         rankingContainer.innerHTML = tableHTML;
     }
 
-
     const clearButton = document.getElementById('clear-ranking-btn');
 
     if (clearButton) {
@@ -48,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (confirmar) {
                 localStorage.removeItem('quizRanking');
-                
                 location.reload();
             }
         });
