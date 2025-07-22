@@ -2,16 +2,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-
-
     background-color: #f0f2f5; 
-
-
     background-image: linear-gradient(rgba(240, 242, 245, 0.85), rgba(240, 242, 245, 0.85)), url('img/fundo-matematica.jpeg');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-
     color: #333;
     display: flex;
     justify-content: center;
@@ -20,6 +15,11 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+}
+
+/* Adicionado para controlar a visibilidade das telas */
+.hidden {
+    display: none;
 }
 
 .container {
