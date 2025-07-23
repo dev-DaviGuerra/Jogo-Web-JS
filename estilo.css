@@ -36,6 +36,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+h5 {
+    color: #6c757d;
+    font-weight: 400;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
 h2 {
     color: #333;
     margin-bottom: 25px;
@@ -132,7 +139,7 @@ button:disabled {
 
 .quiz-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -140,16 +147,10 @@ button:disabled {
     font-size: 18px;
 }
 
-.nome-equipe {
-    font-weight: 600;
-    color: #4a47a3;
-}
-
 .pontuacao-atual {
     font-weight: 600;
     color: #27ae60;
 }
-
 
 .ranking-table {
     width: 100%;

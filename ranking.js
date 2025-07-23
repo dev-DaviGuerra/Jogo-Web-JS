@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 <thead>
                     <tr>
                         <th>Posição</th>
-                        <th>Jogador</th>
-                        <th>Pontuação Máxima</th>
+                        <th>Data da Partida</th>
+                        <th>Pontuação</th>
                     </tr>
                 </thead>
                 <tbody>
         `;
 
-        rankingArray.forEach(([jogador, pontuacao], index) => {
+        rankingArray.forEach(([registro, pontuacao], index) => {
             tableHTML += `
                 <tr>
                     <td>${index + 1}º</td>
-                    <td>${jogador}</td>
+                    <td>${registro}</td>
                     <td>${pontuacao}</td>
                 </tr>
             `;
