@@ -251,3 +251,11 @@ button:hover {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.tab-link, .botao-iniciar, .link-voltar, .link-ranking {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tab-link:active {
+    background-color: #f0f2f5;
+}
