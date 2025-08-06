@@ -266,5 +266,15 @@ input[type="submit"],
 }
 
 .tab-link:active {
-    background-color: #f0f2f5;
+    outline: 2px solid #706fd3;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+.botao-iniciar:active,
+.link-voltar:active,
+.link-ranking:active {
+    outline: 2px solid #27ae60;
+    outline-offset: 2px;
+    border-radius: 10px;
 }
