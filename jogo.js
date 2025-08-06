@@ -1,14 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const NUMERO_PERGUNTAS = 5;
+    const NUMERO_PERGUNTAS = 10;
 
     const telaInicio = document.getElementById('tela-inicio');
     const telaQuiz = document.getElementById('tela-quiz');
     const inicioForm = document.getElementById('inicio-form');
     const dataInput = document.getElementById('data-jogo');
-    const startButton = document.getElementById('startButton');
     const fimDeJogoBox = document.getElementById('fim-de-jogo-box');
-    const fimDeJogoTitulo = document.getElementById('fim-de-jogo-titulo');
     const pontuacaoFinalTexto = document.getElementById('pontuacao-final-texto');
     const pontuacaoAtualSpan = document.getElementById('pontuacao-atual');
     const numeroPerguntaSpan = document.getElementById('numero-pergunta');
@@ -16,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const opcoesContainer = document.getElementById('opcoes-container');
     const quizForm = document.getElementById('quiz-form');
 
-    if (dataInput) {
+    function setDataHora() {
+        if (!dataInput) return;
         const hoje = new Date();
         const dia = String(hoje.getDate()).padStart(2, '0');
         const mes = String(hoje.getMonth() + 1).padStart(2, '0');
@@ -41,10 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarQuiz() {
-        const dataJogo = dataInput.value.trim();
-        if (dataJogo === '') return;
-        
-        const identificadorPartida = dataJogo;
+        const identificadorPartida = dataInput.value.trim();
+        if (identificadorPartida === '') return;
 
         shuffleArray(todasAsPerguntas);
         const perguntasSelecionadas = todasAsPerguntas.slice(0, NUMERO_PERGUNTAS);
@@ -89,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!state) return;
 
         const respostaSelecionada = new FormData(quizForm).get('resposta');
-        const perguntaAnterior = state.perguntas[state.perguntaAtual];
-        if (respostaSelecionada === perguntaAnterior.correta) {
+        if (respostaSelecionada === state.perguntas[state.perguntaAtual].correta) {
             state.pontuacao++;
         }
+        
         state.perguntaAtual++;
         sessionStorage.setItem('quizState', JSON.stringify(state));
         mostrarPergunta();
@@ -103,20 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!state) return;
 
         salvarPontuacaoLocal(state.partida, state.pontuacao);
-        fimDeJogoTitulo.textContent = `Fim de Jogo!`;
+        
         pontuacaoFinalTexto.textContent = `Sua pontuação final foi: ${state.pontuacao} de ${NUMERO_PERGUNTAS}`;
         fimDeJogoBox.classList.remove('hidden');
+
         telaQuiz.classList.add('hidden');
         telaInicio.classList.remove('hidden');
-        sessionStorage.removeItem('quizState');
         
-        const hoje = new Date();
-        const dia = String(hoje.getDate()).padStart(2, '0');
-        const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-        const ano = hoje.getFullYear();
-        const hora = String(hoje.getHours()).padStart(2, '0');
-        const minutos = String(hoje.getMinutes()).padStart(2, '0');
-        dataInput.value = `${dia}/${mes}/${ano} ${hora}:${minutos}`;
+        sessionStorage.removeItem('quizState');
+        setDataHora();
     }
     
     if (inicioForm) {
@@ -129,4 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quizForm) {
         quizForm.addEventListener('submit', processarResposta);
     }
+
+    setDataHora();
 });

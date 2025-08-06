@@ -3,49 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Matemática</title>
+    <title>Bem-vindo ao Quiz de Matemática!</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="container">
-        
-        <div id="tela-inicio">
-            <h1>Quiz de Matemática</h1>
-            
-            <div id="fim-de-jogo-box" class="hidden">
-                <h2 id="fim-de-jogo-titulo">Fim de Jogo!</h2>
-                <p class="pontuacao" id="pontuacao-final-texto"></p>
-            </div>
+    <div class="container landing-page">
+        <h1>🏆 Quiz Interativo de Matemática 🏆</h1>
+        <p class="descricao">Uma forma divertida de testar seus conhecimentos e superar desafios!</p>
 
-            <form id="inicio-form" class="inicio-form">
-                <label for="data-jogo">Data e Hora:</label>
-                <input type="text" name="data-jogo" id="data-jogo" readonly>
-
-                <button type="submit" id="startButton">Começar a Jogar!</button>
-            </form>
-            <a href="ranking.html" class="link-ranking">Ver Ranking Pessoal</a>
+        <div class="tabs-nav">
+            <button class="tab-link active" data-tab="tab-sobre">Sobre o Jogo</button>
+            <button class="tab-link" data-tab="tab-regras">Regras</button>
         </div>
 
-        <div id="tela-quiz" class="hidden">
-            <div class="quiz-header">
-                <span id="pontuacao-atual" class="pontuacao-atual">Pontuação: 0</span>
+        <div class="tabs-content">
+            <div id="tab-sobre" class="tab-pane active">
+                <p>Esse quiz tem o objetivo de transformar um tópico matemático que muitas pessoas consideram difícil em algo interativo e acessível. A inspiração veio da observação de que o aprendizado se torna muito mais eficaz quando é divertido e prático.</p>
             </div>
-            
-            <div class="quiz-box">
-                <p id="numero-pergunta" class="numero-pergunta">Pergunta 1 de 5</p>
-                <h2 id="texto-pergunta"></h2>
-                
-                <form id="quiz-form">
-                    <div id="opcoes-container" class="opcoes">
-                        </div>
-                    <button type="submit">Responder</button>
-                </form>
+
+            <div id="tab-regras" class="tab-pane">
+                <ul class="regras-lista-vertical">
+                    <li><strong>Início da Partida:</strong> Ao clicar em "Iniciar Desafio", uma nova partida será registrada com a data e hora atuais.</li>
+                    <li><strong>Rodada de Questões:</strong> Você responderá a uma sequência de <strong>10 questões</strong> de matemática, sorteadas aleatoriamente.</li>
+                    <li><strong>Pontuação:</strong> Cada resposta correta vale 1 ponto. Não há penalidade para respostas erradas.</li>
+                    <li><strong>Ranking Pessoal:</strong> Ao final do jogo, sua pontuação será salva no "Ranking Pessoal" para você acompanhar seu progresso.</li>
+                </ul>
             </div>
         </div>
 
+        <a href="jogo.html" class="botao-iniciar">Começar o Desafio!</a>
     </div>
 
-    <script src="perguntas.js"></script>
-    <script src="script.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>

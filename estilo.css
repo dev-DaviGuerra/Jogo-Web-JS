@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5; 
     background-image: linear-gradient(rgba(240, 242, 245, 0.85), rgba(240, 242, 245, 0.85)), url('img/fundo-matematica.jpeg');
     background-size: cover;
@@ -36,13 +36,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-h5 {
-    color: #6c757d;
-    font-weight: 400;
-    margin-top: -15px;
-    margin-bottom: 20px;
-}
-
 h2 {
     color: #333;
     margin-bottom: 25px;
@@ -64,11 +57,6 @@ button {
 
 button:hover {
     background-color: #4a47a3;
-}
-
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
 }
 
 .opcoes {
@@ -132,11 +120,6 @@ button:disabled {
     text-align: center;
 }
 
-.inicio-form input[type="text"]:focus {
-    outline: none;
-    border-color: #706fd3;
-}
-
 .quiz-header {
     display: flex;
     justify-content: flex-end;
@@ -170,14 +153,6 @@ button:disabled {
     font-size: 18px;
 }
 
-.ranking-table td {
-    font-size: 16px;
-}
-
-.ranking-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
 .link-ranking, .link-voltar {
     display: inline-block;
     margin-top: 25px;
@@ -188,4 +163,91 @@ button:disabled {
 
 .link-ranking:hover, .link-voltar:hover {
     text-decoration: underline;
+}
+
+.landing-page .descricao {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.botao-iniciar {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #27ae60;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.botao-iniciar:hover {
+    background-color: #2ecc71;
+}
+
+.tabs-nav {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    position: relative;
+    top: 2px;
+    margin-top: 0;
+    width: auto;
+}
+
+.tab-link.active {
+    color: #4a47a3;
+    border: 2px solid #ddd;
+    border-bottom: 2px solid white;
+    border-radius: 8px 8px 0 0;
+}
+
+.tabs-content {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.regras-lista-vertical {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.regras-lista-vertical li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.regras-lista-vertical li:last-child {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

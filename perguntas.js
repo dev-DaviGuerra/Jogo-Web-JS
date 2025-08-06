@@ -148,5 +148,55 @@ const todasAsPerguntas = [
         'pergunta': 'Se uma caixa de bombons tem 8 bombons e você comeu 1 bombom, que porcentagem da caixa você comeu?',
         'opcoes': ['10,5%', '12,5%', '15,5%', '18,5%'],
         'correta': '12,5%'
+    },
+    {
+        'pergunta': 'Você tem um saquinho com 5 bolinhas vermelhas e 3 bolinhas azuis. Qual a probabilidade de, sem olhar, você tirar uma bolinha vermelha?',
+        'opcoes': ['3 em 8', '5 em 8', '5 em 3', '8 em 5'],
+        'correta': '5 em 8'
+    },
+    {
+        'pergunta': 'Em uma caixa de lápis de cor, há 10 lápis. Se 2 deles são verdes, qual a chance de pegar um lápis que NÃO seja verde?',
+        'opcoes': ['20%', '10 em 8', '80%', '2 em 10'],
+        'correta': '80%'
+    },
+    {
+        'pergunta': 'Um dado de 6 lados é jogado. Qual é a probabilidade de o número que cair ser um número par?',
+        'opcoes': ['1 em 6', '3 em 6', '2 em 6', '6 em 3'],
+        'correta': '3 em 6'
+    },
+    {
+        'pergunta': 'Em uma roleta de festa de 8 partes iguais, 3 partes são azuis, 2 são verdes e 3 são vermelhas. Qual cor tem a maior chance de cair?',
+        'opcoes': ['Verde', 'Vermelha', 'Azul', 'Azul e vermelha têm a mesma chance e é a maior chance.'],
+        'correta': 'Azul e vermelha têm a mesma chance e é a maior chance.'
+    },
+    {
+        'pergunta': 'Você tem 10 cartões de um jogo, numerados de 1 a 10. Qual a probabilidade de, ao virar um cartão, o número ser menor que 4?',
+        'opcoes': ['3 em 10', '4 em 10', '6 em 10', '1 em 10'],
+        'correta': '3 em 10'
+    },
+    {
+        'pergunta': 'Em uma sacola de frutas, há 4 maçãs e 6 bananas. Qual a probabilidade de você pegar uma maçã?',
+        'opcoes': ['4 em 10', '6 em 10', '4 em 6', '10 em 4'],
+        'correta': '4 em 10'
+    },
+    {
+        'pergunta': 'Se o tempo está ensolarado e a previsão é de 70% de chance de chover. Qual a probabilidade de NÃO chover?',
+        'opcoes': ['70%', '30%', '100%', '0%'],
+        'correta': '30%'
+    },
+    {
+        'pergunta': 'Em uma caixa com 20 figurinhas, 15 são de super-heróis e o restante é de animais. Qual a probabilidade de tirar uma figurinha de animal?',
+        'opcoes': ['15 em 20', '5 em 20', '5 em 15', '20 em 5'],
+        'correta': '5 em 20'
+    },
+    {
+        'pergunta': 'Você tem um baralho com 4 cartas: um A, um 2, um 3 e um 4. Qual a probabilidade de tirar um número maior que 2?',
+        'opcoes': ['2 em 4', '1 em 4', '3 em 4', '4 em 4'],
+        'correta': '2 em 4'
+    },
+    {
+        'pergunta': 'Em uma caixa de brinquedos, há 5 carrinhos e 5 bonecas. Qual a probabilidade de você pegar um carrinho?',
+        'opcoes': ['50%', '5 em 5', '25%', '5 em 10'],
+        'correta': '50%'
     }
 ];
