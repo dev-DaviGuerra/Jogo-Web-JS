@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #f0f2f5; 
     background-image: linear-gradient(rgba(240, 242, 245, 0.85), rgba(240, 242, 245, 0.85)), url('img/fundo-matematica.jpeg');
     background-size: cover;
     background-position: center center;
@@ -210,6 +210,9 @@ button:hover {
     top: 2px;
     margin-top: 0;
     width: auto;
+    display: inline-block;
+    font-family: inherit;
+    text-align: center;
 }
 
 .tab-link.active {

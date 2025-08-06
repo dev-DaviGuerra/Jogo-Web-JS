@@ -100,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         salvarPontuacaoLocal(state.partida, state.pontuacao);
         
+        const fimDeJogoTitulo = document.getElementById('fim-de-jogo-titulo');
+        if(fimDeJogoTitulo) fimDeJogoTitulo.textContent = `Fim de Jogo!`;
+        
         pontuacaoFinalTexto.textContent = `Sua pontuação final foi: ${state.pontuacao} de ${NUMERO_PERGUNTAS}`;
         fimDeJogoBox.classList.remove('hidden');
 
