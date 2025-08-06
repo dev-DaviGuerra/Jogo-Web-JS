@@ -193,10 +193,5 @@ const todasAsPerguntas = [
         'pergunta': 'Você tem um baralho com 4 cartas: um A, um 2, um 3 e um 4. Qual a probabilidade de tirar um número maior que 2?',
         'opcoes': ['2 em 4', '1 em 4', '3 em 4', '4 em 4'],
         'correta': '2 em 4'
-    },
-    {
-        'pergunta': 'Em uma caixa de brinquedos, há 5 carrinhos e 5 bonecas. Qual a probabilidade de você pegar um carrinho?',
-        'opcoes': ['50%', '5 em 5', '25%', '5 em 10'],
-        'correta': '50%'
     }
 ];
